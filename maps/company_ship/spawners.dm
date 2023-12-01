@@ -15,7 +15,6 @@
 		/obj/item/gun/energy/retro,
 		/obj/item/gun/projectile/pistol/throwback,
 		/obj/item/gun/energy/ionrifle/small,
-		/obj/item/gun/projectile/pistol/bobcat,
 		/obj/item/gun/projectile/pistol/m19
 	)
 
@@ -25,7 +24,6 @@
 		/obj/item/gun/projectile/pistol/sec = 3,
 		/obj/item/gun/energy/gun = 2,
 		/obj/item/gun/projectile/pistol/m19 = 1,
-		/obj/item/gun/projectile/pistol/bobcat = 1,
 		/obj/item/gun/projectile/pistol/holdout = 2,
 		/obj/item/gun/energy/retro = 1,
 		/obj/item/gun/projectile/pistol/throwback = 1,
@@ -42,7 +40,6 @@
 		/obj/item/gun/projectile/automatic/merc_smg = 2,
 		/obj/item/gun/projectile/automatic/assault_rifle = 2,
 		/obj/item/gun/projectile/automatic/bullpup_rifle = 2,
-		/obj/item/gun/projectile/pistol/optimus = 3,
 		/obj/item/gun/projectile/pistol/m22f = 3,
 		/obj/item/gun/projectile/pistol/sec = 4,
 		/obj/item/gun/projectile/pistol/holdout = 4,
@@ -57,6 +54,5 @@
 		/obj/item/gun/projectile/shotgun/pump/combat = 2,
 		/obj/item/gun/projectile/pistol/throwback = 1,
 		/obj/item/gun/projectile/pistol/broomstick = 1,
-		/obj/item/gun/projectile/pistol/optimus = 3,
 		/obj/item/gun/projectile/pistol/m22f = 3
 	)
