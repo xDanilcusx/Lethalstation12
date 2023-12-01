@@ -14,6 +14,10 @@
 		/area/shuttle/specops/centcom,
 	)
 
+/area/main_ship
+	name = "\improper Drone ship"
+	icon_state = "hallF"
+
 //Fifth Deck (Z-0)
 /area/hallway/primary/fifthdeck/fore
 	name = "\improper Fifth Deck Fore Hallway"

@@ -15,6 +15,7 @@
 	#include "job/jobs.dm"
 	#include "job/outfits/misc_outfits.dm"
 
+	#include "ship.dmm"
 //	#include "z1_admin.dmm"
 //	#include "z2_transit.dmm"
 
