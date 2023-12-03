@@ -1,3 +1,43 @@
+/obj/overmap/visitable/ship/landable/company_ship
+	name = "Drone ship"
+	desc = "Small semi-automated vessel, broadcasting \"SALVAGE DUTY IN PROGRESS, DO NOT DISTURB\"."
+	shuttle = "companyship"
+	max_speed = 1/(2 SECONDS)
+	burn_delay = 1 SECONDS
+	vessel_mass = 3000
+	fore_dir = EAST
+	skill_needed = SKILL_EXPERIENCED
+	vessel_size = SHIP_SIZE_TINY
+
+/obj/shuttle_landmark/company_ship
+	name = "Drone ship Landing Zone"
+	landmark_tag = "nav_drone_ship"
+
+/datum/shuttle/autodock/overmap/company_ship
+	name = "Drone ship"
+	warmup_time = 6
+	range = 0
+	shuttle_area = list(/area/main_ship)
+	defer_initialisation = TRUE
+	flags = SHUTTLE_FLAGS_PROCESS
+	skill_needed = SKILL_UNSKILLED
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	current_location = "nav_drone_ship"
+	landmark_transition = "nav_transit_drone_ship"
+
+/obj/shuttle_landmark/transit/company_ship
+	name = "In transit"
+	landmark_tag = "nav_transit_drone_ship"
+
+/obj/machinery/computer/shuttle_control/explore/company_ship
+	name = "shuttle control console"
+	shuttle_tag = "companyship"
+
+/*
+ *  Basic ships
+ *  ========
+ */
+
 /obj/overmap/visitable/ship/torch
 	name = "SEV Torch"
 	desc = "A frankensteined HNS Mako-class corvette, broadcasting SCGEC codes and the designation \"SEV Torch, HSC-4-13-X\"."

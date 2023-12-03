@@ -1,7 +1,10 @@
 #if !defined(using_map_DATUM)
 
 	#include "areas.dm"
+	#include "doors.dm"
+	#include "items.dm"
 	#include "lobby.dm"
+	#include "machinery.dm"
 	#include "overmap.dm"
 	#include "presets.dm"
 	#include "procs.dm"
