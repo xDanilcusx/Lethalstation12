@@ -14,13 +14,11 @@
 	for (var/_limb in BP_LEGS_FEET)
 		var/obj/item/organ/external/limb = get_organ(_limb)
 		if (!limb)
-			return
+			continue
 		if (limb.status & ORGAN_BROKEN)
 			. -= limb.splinted ? 0.25 : 0.5
 
-	. LEAP_RANGE_MOD
+	. += LEAP_RANGE_ADD
 
 /singleton/cultural_info/culture/human
-	secondary_langs = list(
-		LANGUAGE_SPACER
-	)
+	secondary_langs = list(LANGUAGE_SPACER)
