@@ -1,25 +1,26 @@
 /obj/overmap/visitable/ship/empty_space
 	name = "Empty space"
-	desc = "//ERROR//."
+	desc = "//ERROR//"
 	icon_state = "sector"
-	sector_flags = OVERMAP_SECTOR_KNOWN|OVERMAP_SECTOR_IN_SPACE|OVERMAP_SECTOR_BASE
+	sector_flags = OVERMAP_SECTOR_IN_SPACE|OVERMAP_SECTOR_BASE
 	scannable = FALSE
 	initial_restricted_waypoints = list("Company" = list("nav_drone_ship"))
 
 /obj/overmap/visitable/ship/landable/company_ship
 	name = "Drone ship"
-	desc = "Small semi-automated vessel, broadcasting \"SALVAGE DUTY IN PROGRESS, DO NOT DISTURB\"."
+	desc = "Small semi-automated vessel, broadcasting \"//SALVAGE DUTY IN PROGRESS, DO NOT DISTURB//\"."
 	shuttle = "Company"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 3000
-	skill_needed = SKILL_EXPERIENCED
+	skill_needed = SKILL_MASTER
 	vessel_size = SHIP_SIZE_TINY
 	fore_dir = EAST
 
 /obj/shuttle_landmark/company_ship
 	name = "Drone ship Landing Zone"
 	landmark_tag = "nav_drone_ship"
+
 	/// Если убрать это дерьмо - после взлёта мы будем встречать эмбиенс космоса и анимацию левитации
 	base_turf = /turf/simulated/floor/plating
 	base_area = /area/maintenance
