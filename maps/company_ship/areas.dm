@@ -16,6 +16,8 @@
 
 /area/main_ship
 	name = "\improper Drone ship"
+	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED
+	base_turf_special_handling = TRUE
 	icon_state = "hallF"
 
 //Fifth Deck (Z-0)

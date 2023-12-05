@@ -248,22 +248,22 @@
 	var/static/run_delay = 2
 
 	/// Modifier for ticks between moves while walking
-	var/static/walk_delay = 4
+	var/static/walk_delay = 5
 
 	/// Modifier for ticks between moves while creeping
-	var/static/creep_delay = 6
+	var/static/creep_delay = 11
 
 	/// Modifier for base stamina cost while sprinting
-	var/static/minimum_sprint_cost = 0.8
+	var/static/minimum_sprint_cost = 2.5
 
 	/// Modifier for amount hauling skill can reduce stamina cost
 	var/static/skill_sprint_cost_range = 0.8
 
 	/// Modifier for minimum rate mobs can regain stamina
-	var/static/minimum_stamina_recovery = 1
+	var/static/minimum_stamina_recovery = 6
 
 	/// Modifier for maximum rate mobs can regain stamina
-	var/static/maximum_stamina_recovery = 3
+	var/static/maximum_stamina_recovery = 18
 
 	/// After this amount alive, mushrooms will not boom boom
 	var/static/maximum_mushrooms = 15
@@ -336,7 +336,7 @@
 	var/static/aooc_allowed = TRUE
 
 	/// Whether space turfs and some exterior turfs have ambient light or not default, 0.5, values over 1 may overpower dynamic lights
-	var/static/starlight = 0.5
+	var/static/starlight = 0
 
 	var/static/list/ert_species = list(SPECIES_HUMAN)
 

@@ -1,22 +1,22 @@
 /datum/map/company_ship
-	name = "empty space"
-	full_name = "empty space"
+	name = "Drone Ship"
+	full_name = "Drone Ship"
 	path = "company_ship"
-	flags = null
+	flags = MAP_HAS_BRANCH | MAP_HAS_RANK
 	config_path = "config/torch_config.txt"
 
-	admin_levels  = list(3)
-	escape_levels = list(4)
-	empty_levels  = list(5)
-	accessible_z_levels = list("1"=1,"2"=30)
-	overmap_size = 7
-	overmap_event_areas = 5
+	admin_levels  = list(2)
+	escape_levels = list(3)
+	empty_levels  = list(4)
+	accessible_z_levels = list("1"=1,"2"=2,"12"=30)
+	overmap_size = 9
+	overmap_event_areas = 1
 
 	allowed_spawns = list("Cryogenic Storage")
 	default_spawn = "Cryogenic Storage"
 
-	station_name  = "empty space"
-	station_short = "empty space"
+	station_name  = "Drone Ship"
+	station_short = "Drone Ship"
 	dock_name     = "Space"
 	boss_name     = "The Company"
 	boss_short    = "Company"
@@ -35,7 +35,6 @@
 
 	evac_controller_type = /datum/evacuation_controller/starship
 
-	default_law_type = /datum/ai_laws/solgov
 	use_overmap = 1
 	num_exoplanets = 2
 

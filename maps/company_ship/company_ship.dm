@@ -5,6 +5,7 @@
 	#include "items.dm"
 	#include "lobby.dm"
 	#include "machinery.dm"
+	#include "music.dm"
 	#include "overmap.dm"
 	#include "presets.dm"
 	#include "procs.dm"
@@ -20,7 +21,7 @@
 
 	#include "ship.dmm"
 //	#include "z1_admin.dmm"
-//	#include "z2_transit.dmm"
+	#include "z2_transit.dmm"
 
 	#include "../away/empty.dmm"
 

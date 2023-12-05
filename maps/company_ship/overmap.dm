@@ -1,37 +1,50 @@
+/obj/overmap/visitable/ship/empty_space
+	name = "Empty space"
+	desc = "//ERROR//."
+	icon_state = "sector"
+	sector_flags = OVERMAP_SECTOR_KNOWN|OVERMAP_SECTOR_IN_SPACE|OVERMAP_SECTOR_BASE
+	scannable = FALSE
+	initial_restricted_waypoints = list("Company" = list("nav_drone_ship"))
+
 /obj/overmap/visitable/ship/landable/company_ship
 	name = "Drone ship"
 	desc = "Small semi-automated vessel, broadcasting \"SALVAGE DUTY IN PROGRESS, DO NOT DISTURB\"."
-	shuttle = "companyship"
+	shuttle = "Company"
 	max_speed = 1/(2 SECONDS)
 	burn_delay = 1 SECONDS
 	vessel_mass = 3000
-	fore_dir = EAST
 	skill_needed = SKILL_EXPERIENCED
 	vessel_size = SHIP_SIZE_TINY
+	fore_dir = EAST
 
 /obj/shuttle_landmark/company_ship
 	name = "Drone ship Landing Zone"
 	landmark_tag = "nav_drone_ship"
-
-/datum/shuttle/autodock/overmap/company_ship
-	name = "Drone ship"
-	warmup_time = 6
-	range = 0
-	shuttle_area = list(/area/main_ship)
-	defer_initialisation = TRUE
-	flags = SHUTTLE_FLAGS_PROCESS
-	skill_needed = SKILL_UNSKILLED
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling
-	current_location = "nav_drone_ship"
-	landmark_transition = "nav_transit_drone_ship"
+	/// Если убрать это дерьмо - после взлёта мы будем встречать эмбиенс космоса и анимацию левитации
+	base_turf = /turf/simulated/floor/plating
+	base_area = /area/maintenance
 
 /obj/shuttle_landmark/transit/company_ship
 	name = "In transit"
 	landmark_tag = "nav_transit_drone_ship"
 
+/datum/shuttle/autodock/overmap/company_ship
+	name = "Company"
+	current_location = "nav_drone_ship"
+	landmark_transition = "nav_transit_drone_ship"
+	warmup_time = 6
+	move_time = 30
+	knockdown = 0
+	range = 0
+
+	ceiling_type = /turf/simulated/floor/shuttle_ceiling
+	shuttle_area = /area/main_ship
+	skill_needed = SKILL_UNSKILLED
+	flags = SHUTTLE_FLAGS_PROCESS
+
 /obj/machinery/computer/shuttle_control/explore/company_ship
 	name = "shuttle control console"
-	shuttle_tag = "companyship"
+	shuttle_tag = "Company"
 
 /*
  *  Basic ships

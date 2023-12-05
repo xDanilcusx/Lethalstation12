@@ -15,9 +15,12 @@
 	name = "old space helmet"
 	icon_state = "syndicate-helm-black"
 	item_state = "syndicate-helm-black"
+	camera = /obj/machinery/camera/network/helmet
+	tint = TINT_MODERATE
 
 /obj/structure/closet/red
 	closet_appearance = /singleton/closet_appearance/red
 
 /singleton/closet_appearance/red
+	decals = list("lower_vent")
 	color = COLOR_RED_GRAY
