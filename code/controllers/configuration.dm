@@ -245,7 +245,7 @@
 	var/static/no_click_cooldown = FALSE
 
 	/// Modifier for ticks between moves while running
-	var/static/run_delay = 2
+	var/static/run_delay = 3
 
 	/// Modifier for ticks between moves while walking
 	var/static/walk_delay = 5

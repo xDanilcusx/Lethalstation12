@@ -1,0 +1,2 @@
+#define MANEUVER_STAMINA_LOSS_MOD -2
+#define LEAP_RANGE_MOD += 2

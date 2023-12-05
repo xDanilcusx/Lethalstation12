@@ -42,3 +42,16 @@
 		desc += "There were <b>no survivors</b>, <b>[offship_players] off-ship players</b>, (<b>[ghosts] ghosts</b>)."
 
 	return desc
+
+/singleton/maneuver/perform(mob/living/user, atom/target, strength, reflexively = FALSE)
+	if(can_be_used_by(user, target))
+		var/do_flags = DO_DEFAULT | DO_USER_UNIQUE_ACT
+		if(!reflexively)
+			do_flags |= DO_PUBLIC_PROGRESS | DO_BAR_OVER_USER
+			show_initial_message(user, target)
+		user.face_atom(target)
+		. = (!delay || reflexively || (do_after(user, delay, target, do_flags) && can_be_used_by(user, target)))
+		if(cooldown)
+			user.last_special = world.time + cooldown
+		if(stamina_cost)
+			user.adjust_stamina(stamina_cost * MANEUVER_STAMINA_LOSS_MOD)
