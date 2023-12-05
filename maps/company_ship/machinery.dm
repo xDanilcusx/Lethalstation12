@@ -15,3 +15,10 @@
 		if(S.check_ownership(src))
 			S.engines |= controller
 			break
+
+/obj/machinery/computer/modular/preset/company_console
+	default_software = list(
+		/datum/computer_file/program/camera_monitor,
+		/datum/computer_file/program/records,
+		/datum/computer_file/program/supply,
+	)

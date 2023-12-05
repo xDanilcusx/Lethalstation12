@@ -1,5 +1,5 @@
 /obj/overmap/visitable/ship/empty_space
-	name = "Empty space"
+	name = "empty space"
 	desc = "//ERROR//"
 	icon_state = "sector"
 	sector_flags = OVERMAP_SECTOR_IN_SPACE|OVERMAP_SECTOR_BASE
