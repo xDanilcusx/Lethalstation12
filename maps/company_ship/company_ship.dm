@@ -1,7 +1,9 @@
 #if !defined(using_map_DATUM)
 
+	#include "_defines.dm"
 	#include "areas.dm"
 	#include "doors.dm"
+	#include "human.dm"
 	#include "items.dm"
 	#include "lobby.dm"
 	#include "machinery.dm"

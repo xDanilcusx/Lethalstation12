@@ -43,6 +43,9 @@
 
 	return desc
 
+/datum/ntnet/create_email(mob/user, desired_name, domain, assignment, desired_password)
+	return FALSE
+
 /singleton/maneuver/perform(mob/living/user, atom/target, strength, reflexively = FALSE)
 	if(can_be_used_by(user, target))
 		var/do_flags = DO_DEFAULT | DO_USER_UNIQUE_ACT
