@@ -22,3 +22,9 @@
 		/datum/computer_file/program/records,
 		/datum/computer_file/program/supply,
 	)
+
+/obj/machinery/recharger
+	allowed_devices = list(/obj/item/device/flashlight, /obj/item/gun/energy, /obj/item/gun/magnetic/railgun, /obj/item/melee/baton, /obj/item/cell, /obj/item/modular_computer, /obj/item/device/suit_sensor_jammer, /obj/item/stock_parts/computer/battery_module, /obj/item/shield_diffuser, /obj/item/clothing/mask/smokable/ecig, /obj/item/device/radio)
+
+/obj/machinery/recharger/wallcharger
+	allowed_devices = list(/obj/item/device/flashlight, /obj/item/gun/energy, /obj/item/gun/magnetic/railgun, /obj/item/melee/baton, /obj/item/cell, /obj/item/modular_computer, /obj/item/device/suit_sensor_jammer, /obj/item/stock_parts/computer/battery_module, /obj/item/shield_diffuser, /obj/item/clothing/mask/smokable/ecig, /obj/item/device/radio)

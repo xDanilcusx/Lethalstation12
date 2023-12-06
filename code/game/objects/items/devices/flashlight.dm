@@ -501,7 +501,3 @@
 /obj/item/device/flashlight/lamp/lava/yellow
 	desc = "A kitchy yellow decorative light."
 	light_color = COLOR_YELLOW
-
-#undef FLASHLIGHT_ALWAYS_ON
-#undef FLASHLIGHT_SINGLE_USE
-#undef FLASHLIGHT_CANNOT_BLIND
