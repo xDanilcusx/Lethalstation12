@@ -2,8 +2,8 @@ GLOBAL_LIST_EMPTY(banned_ruin_ids)
 
 /proc/seedRuins(list/zlevels, budget, list/potentialRuins, allowed_area = /area/space, maxx = world.maxx, maxy = world.maxy)
 	if (!length(z_levels))
-		UNLINT(WARNING("No Z levels provided - Not generating ruins"))
-		return
+		UNLINT(WARNING("No Z levels provided - making a new one"))
+		INCREMENT_WORLD_Z_SIZE
 
 	for (var/z in zlevels)
 		var/turf/check = locate(1, 1, z)

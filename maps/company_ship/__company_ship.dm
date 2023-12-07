@@ -3,6 +3,7 @@
 	#include "_defines.dm"
 	#include "areas.dm"
 	#include "doors.dm"
+	#include "exoplanets.dm"
 	#include "human.dm"
 	#include "items.dm"
 	#include "lobby.dm"

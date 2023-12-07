@@ -38,7 +38,7 @@
 	use_overmap = 1
 	num_exoplanets = 2
 
-	away_site_budget = 3
+	away_site_budget = 0
 	min_offmap_players = 0
 
 	welcome_sound = null

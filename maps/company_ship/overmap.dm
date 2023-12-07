@@ -2,9 +2,10 @@
 	name = "empty space"
 	desc = "//ERROR//"
 	icon_state = "sector"
+	initial_restricted_waypoints = list("Company" = list("nav_drone_ship"))
 	sector_flags = OVERMAP_SECTOR_IN_SPACE|OVERMAP_SECTOR_BASE
 	scannable = FALSE
-	initial_restricted_waypoints = list("Company" = list("nav_drone_ship"))
+	layer = 2
 
 /obj/overmap/visitable/ship/landable/company_ship
 	name = "Drone ship"

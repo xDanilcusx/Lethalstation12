@@ -100,7 +100,7 @@
 	SSshuttle.block_queue = pre_init_state
 	SSshuttle.clear_init_queue() // We will flush the queue unless there were other blockers, in which case they will do it.
 
-/datum/map_template/proc/load_new_z(no_changeturf = TRUE)
+/datum/map_template/proc/load_new_z(no_changeturf = TRUE, init = TRUE, skip_levels = list())
 
 	var/x = round((world.maxx - width)/2)
 	var/y = round((world.maxy - height)/2)
@@ -114,7 +114,10 @@
 	var/shuttle_state = pre_init_shuttles()
 
 	var/initialized_areas_by_type = list()
-	for (var/mappath in mappaths)
+	for (var/i=1 to length(mappaths))
+		if (i in skip_levels)
+			continue
+		var/mappath = mappaths[i]
 		var/datum/map_load_metadata/M = GLOB.maploader.load_map(file(mappath), x, y, no_changeturf = no_changeturf, initialized_areas_by_type = initialized_areas_by_type)
 		if (M)
 			bounds = extend_bounds_if_needed(bounds, M.bounds)
@@ -132,6 +135,8 @@
 
 	//initialize things that are normally initialized after map load
 	init_atoms(atoms_to_initialise)
+	if(!init)
+		return locate(world.maxx/2, world.maxy/2, world.maxz)
 	init_shuttles(shuttle_state)
 	after_load(initial_z)
 	for(var/light_z = initial_z to world.maxz)
@@ -158,13 +163,18 @@
 	var/shuttle_state = pre_init_shuttles()
 
 	var/initialized_areas_by_type = list()
-	for (var/mappath in mappaths)
-		var/datum/map_load_metadata/M = GLOB.maploader.load_map(file(mappath), T.x, T.y, T.z, cropMap=TRUE, clear_contents=(template_flags & TEMPLATE_FLAG_CLEAR_CONTENTS), initialized_areas_by_type = initialized_areas_by_type)
-		if (M)
-			atoms_to_initialise += M.atoms_to_initialise
+	for (var/i=1 to length(mappaths))
+		var/mappath = mappaths[i]
+		var/datum/map_load_metadata/M
+		if (i==1)
+			M = GLOB.maploader.load_map(file(mappath), T.x, T.y, T.z, cropMap=TRUE, clear_contents=(template_flags & TEMPLATE_FLAG_CLEAR_CONTENTS), initialized_areas_by_type = initialized_areas_by_type)
+			if (M)
+				atoms_to_initialise += M.atoms_to_initialise
+			else
+				log_debug("Failed to load map file [mappath] for [src].")
+				return FALSE
 		else
-			log_debug("Failed to load map file [mappath] for [src].")
-			return FALSE
+			load_new_z(no_changeturf = TRUE, init = FALSE, skip_levels = list(1))
 
 	//initialize things that are normally initialized after map load
 	init_atoms(atoms_to_initialise)

@@ -1,0 +1,15 @@
+"a" = (/turf/simulated/wall/r_wall/gray/bunker,/area/map_template/complex/bunker)
+"b" = (/obj/structure/catwalk,/turf/simulated/floor,/area/map_template/complex/bunker)
+"c" = (/obj/structure/catwalk,/turf/simulated/floor,/area/map_template/complex/bunker)
+"d" = (/obj/landmark/map_load_mark/complex/bunker/mark_for_marks,/obj/structure/catwalk,/turf/simulated/floor,/area/map_template/complex/bunker)
+"e" = (/obj/landmark/map_data{height = 2},/turf/simulated/wall/r_wall/gray/bunker,/area/map_template/complex/bunker)
+
+(1,1,1) = {"
+aabaaa
+acccca
+acccca
+accdcb
+acccca
+acccca
+eabaaa
+"}
