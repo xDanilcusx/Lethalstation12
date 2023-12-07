@@ -13,6 +13,7 @@
 			continue
 
 		var/datum/map_template/ruin/complex/map = pick(mark.templates)
+		var/turf/mark_turf = get_turf(mark)
 
 		var/list/doors = mark.door_types
 		if(LAZYLEN(doors))
@@ -30,7 +31,8 @@
 		var/y_pos = mark.y - map.door_y + ceil(map.height/2)
 
 		var/turf/location = locate(x_pos, y_pos, mark.z)
-		map.load(get_step(location, mark.dir), TRUE)
+		if(!map.load(get_step(location, mark.dir), TRUE))
+			new doors[1](mark_turf)
 		qdel(mark)
 
 	LAZYCLEARLIST(subtemplates_to_spawn)
