@@ -5,6 +5,7 @@
 /area/map_template/complex/bunker
 	name = "\improper Abandoned Bunker"
 	icon_state = "blue"
+	base_turf = /turf/simulated/floor/exoplanet/plating
 
 /obj/landmark/map_load_mark/complex/bunker
 	name = "Bunker Piece"
