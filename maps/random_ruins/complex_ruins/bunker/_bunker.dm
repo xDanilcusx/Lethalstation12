@@ -15,19 +15,19 @@
 	)
 
 /obj/landmark/map_load_mark/complex/bunker/north
-	templates = list(/datum/map_template/ruin/complex/bunker/north/concrete_hallway)
+	templates_type = /datum/map_template/ruin/complex/bunker/north
 	dir = NORTH
 
 /obj/landmark/map_load_mark/complex/bunker/east
-	templates = list()
+//	templates_type = /datum/map_template/ruin/complex/bunker/east
 	dir = EAST
 
 /obj/landmark/map_load_mark/complex/bunker/south
-	templates = list()
+//	templates_type = /datum/map_template/ruin/complex/bunker/south
 	dir = SOUTH
 
 /obj/landmark/map_load_mark/complex/bunker/west
-	templates = list()
+//	templates_type = /datum/map_template/ruin/complex/bunker/west
 	dir = WEST
 
 #include "entrance.dm"

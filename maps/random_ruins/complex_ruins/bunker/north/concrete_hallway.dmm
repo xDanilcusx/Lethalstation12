@@ -1,6 +1,7 @@
 "a" = (/turf/simulated/wall/r_wall/gray/bunker,/area/map_template/complex/bunker)
 "b" = (/obj/landmark/map_load_mark/complex/bunker/north,/turf/simulated/floor/exoplanet/concrete/bunker,/area/map_template/complex/bunker)
 "c" = (/turf/simulated/floor/exoplanet/concrete/bunker,/area/map_template/complex/bunker)
+"d" = (/turf/template_noop,/area/map_template/complex/bunker)
 
 (1,1,1) = {"
 aabaa
@@ -14,6 +15,5 @@ accca
 accca
 accca
 accca
-accca
-accca
+aadaa
 "}

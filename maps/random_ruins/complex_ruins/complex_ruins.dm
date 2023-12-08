@@ -40,7 +40,12 @@
 /obj/landmark/map_load_mark/complex
 	icon = 'maps/random_ruins/complex_ruins/landmarks.dmi'
 	icon_state = "arrow"
+	var/datum/templates_type
 	var/list/door_types = list()
+
+/obj/landmark/map_load_mark/complex/Initialize()
+	. = ..()
+	templates = subtypesof(templates_type)
 
 /area/map_template/complex
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_NO_MODIFY
