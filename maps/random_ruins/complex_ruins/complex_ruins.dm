@@ -31,8 +31,9 @@
 		var/y_pos = mark.y - map.door_y + ceil(map.height/2)
 
 		var/turf/location = locate(x_pos, y_pos, mark.z)
-		if(!map.load(get_step(location, mark.dir), TRUE))
-			new doors[1](mark_turf)
+		if(!map.load(location, TRUE))
+			var/atom/dead_end = doors[1]
+			new dead_end(mark_turf)
 		qdel(mark)
 
 	LAZYCLEARLIST(subtemplates_to_spawn)
