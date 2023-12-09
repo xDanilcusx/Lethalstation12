@@ -1,7 +1,7 @@
 "a" = (/turf/template_noop,/area/template_noop)
-"b" = (/obj/landmark/map_load_mark/complex/bunker/north,/turf/template_noop,/area/template_noop)
-"c" = (/obj/landmark/map_load_mark/complex/bunker/east,/turf/template_noop,/area/template_noop)
-"d" = (/obj/landmark/map_load_mark/complex/bunker/south,/turf/template_noop,/area/template_noop)
+"b" = (/obj/landmark/map_load_mark/complex/bunker/north/no_dead_ends,/turf/template_noop,/area/template_noop)
+"c" = (/obj/landmark/map_load_mark/complex/bunker/east/no_dead_ends,/turf/template_noop,/area/template_noop)
+"d" = (/obj/landmark/map_load_mark/complex/bunker/south/no_dead_ends,/turf/template_noop,/area/template_noop)
 
 (1,1,1) = {"
 aabaaa

@@ -23,8 +23,16 @@
 		if(!door)
 			continue
 
+		var/direction = mark.dir
+
+		/// Эмм давайте-ка без наложений
+		if(!isspaceturf(get_step(mark_turf, direction)))
+			var/turf/dead_end = doors[1]
+			new dead_end(mark_turf)
+			continue
+
 		door = new door(get_turf(mark))
-		door.dir = mark.dir
+		door.dir = direction
 
 		/// Тупик, нет смысла генерить следующую комнату
 		if(isturf(door))
@@ -35,10 +43,10 @@
 		var/y_pos = mark.y - map.door_y + ceil(map.height/2)
 
 		var/turf/location = locate(x_pos, y_pos, mark.z)
-		var/turf/offsetted_loc = get_step(location, mark.dir)
+		var/turf/offsetted_loc = get_step(location, direction)
 
 		if(!map.load(offsetted_loc, TRUE))
-			var/atom/dead_end = doors[1]
+			var/turf/dead_end = doors[1]
 			new dead_end(mark_turf)
 
 		qdel(mark)

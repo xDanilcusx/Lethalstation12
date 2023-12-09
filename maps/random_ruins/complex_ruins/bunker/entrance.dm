@@ -5,7 +5,7 @@
 	prefix = "maps/random_ruins/complex_ruins/bunker/"
 	suffixes = list("entrance-1.dmm","entrance-2.dmm")
 	spawn_cost = 1
-	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RADS | AREA_FLAG_NO_MODIFY | TEMPLATE_FLAG_ALLOW_DUPLICATES
+	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS | TEMPLATE_FLAG_ALLOW_DUPLICATES
 	ruin_tags = RUIN_HABITAT|RUIN_HUMAN|RUIN_WRECK
 	apc_test_exempt_areas = list(/area/map_template/complex/bunker = NO_APC)
 

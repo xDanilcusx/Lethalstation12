@@ -24,6 +24,14 @@
 	ruin_tags_blacklist = null
 	ruin_tags_whitelist = RUIN_HUMAN
 
+/obj/overmap/visitable/sector/exoplanet/snow
+	ruin_tags_blacklist = null
+	ruin_tags_whitelist = RUIN_HUMAN
+
+/obj/overmap/visitable/sector/exoplanet/volcanic
+	ruin_tags_blacklist = null
+	ruin_tags_whitelist = RUIN_HUMAN
+
 
 /datum/exoplanet_theme
 	ruin_tags_blacklist = null
