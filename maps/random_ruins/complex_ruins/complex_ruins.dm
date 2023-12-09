@@ -1,3 +1,6 @@
+
+/// Для корректной работы генерации все части бункера должны быть нечётного размера.
+
 /datum/map_template/ruin/complex
 	prefix = "maps/random_ruins/complex_ruins/"
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
@@ -16,24 +19,25 @@
 		var/turf/mark_turf = get_turf(mark)
 
 		var/list/doors = mark.door_types
-		if(LAZYLEN(doors))
-			var/atom/door = pickweight(doors)
-			if(door)
-				door = new door(get_turf(mark))
-				door.dir = mark.dir
+		var/atom/door = pickweight(doors)
+		if(!door)
+			continue
 
-			/// Тупик, нет смысла генерить следующую комнату
-			if(isturf(door))
-				continue
+		door = new door(get_turf(mark))
+		door.dir = mark.dir
+
+		/// Тупик, нет смысла генерить следующую комнату
+		if(isturf(door))
+			continue
 
 		map = new map()
 		var/x_pos = mark.x - map.door_x + ceil(map.width/2)
 		var/y_pos = mark.y - map.door_y + ceil(map.height/2)
 
 		var/turf/location = locate(x_pos, y_pos, mark.z)
-		location = get_step(location, mark.dir)
+		var/turf/offsetted_loc = get_step(location, mark.dir)
 
-		if(!map.load(location, TRUE))
+		if(!map.load(offsetted_loc, TRUE))
 			var/atom/dead_end = doors[1]
 			new dead_end(mark_turf)
 

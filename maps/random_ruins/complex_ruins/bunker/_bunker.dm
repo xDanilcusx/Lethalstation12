@@ -10,26 +10,33 @@
 /obj/landmark/map_load_mark/complex/bunker
 	name = "Bunker Piece"
 	door_types = list(
-		/turf/simulated/wall/r_wall/gray/bunker = 1,
-		/obj/machinery/door/unpowered/simple = 2,
-		/obj/landmark/empty = 3
+		/turf/simulated/wall/r_wall/gray/bunker = 2,
+		/obj/machinery/door/unpowered/simple/iron = 1,
+		/obj/landmark/empty = 1
 	)
+
+/obj/landmark/map_load_mark/complex/bunker/east
+	templates_type = /datum/map_template/ruin/complex/bunker/east
+	dir = EAST
 
 /obj/landmark/map_load_mark/complex/bunker/north
 	templates_type = /datum/map_template/ruin/complex/bunker/north
 	dir = NORTH
 
-/obj/landmark/map_load_mark/complex/bunker/east
-//	templates_type = /datum/map_template/ruin/complex/bunker/east
-	dir = EAST
-
 /obj/landmark/map_load_mark/complex/bunker/south
-//	templates_type = /datum/map_template/ruin/complex/bunker/south
+	templates_type = /datum/map_template/ruin/complex/bunker/south
 	dir = SOUTH
 
 /obj/landmark/map_load_mark/complex/bunker/west
-//	templates_type = /datum/map_template/ruin/complex/bunker/west
+	templates_type = /datum/map_template/ruin/complex/bunker/west
 	dir = WEST
 
 #include "entrance.dm"
+
+#include "east/concrete_hallway.dm"
+
 #include "north/concrete_hallway.dm"
+
+#include "south/concrete_hallway.dm"
+
+#include "west/concrete_hallway.dm"

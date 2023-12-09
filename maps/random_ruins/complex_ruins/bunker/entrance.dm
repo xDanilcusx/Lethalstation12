@@ -9,7 +9,7 @@
 	ruin_tags = RUIN_HABITAT|RUIN_HUMAN|RUIN_WRECK
 	apc_test_exempt_areas = list(/area/map_template/complex/bunker = NO_APC)
 
-/datum/map_template/ruin/complex/bunker/entrance_marks
+/datum/map_template/ruin/complex/bunker/entrance/marks
 	name = "Entrance marks"
 	id = "bunker_entrance_marks"
 	suffixes = list("entrance-2-marks.dmm")
@@ -20,4 +20,4 @@
 	name = "Entrance bunker pieces spawn"
 	icon = 'icons/effects/landmarks.dmi'
 	icon_state = "x"
-	templates = list(/datum/map_template/ruin/complex/bunker/entrance_marks)
+	templates_type = /datum/map_template/ruin/complex/bunker/entrance
