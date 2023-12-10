@@ -12,6 +12,10 @@
 	var/accessibility_weight = 0
 	var/template_flags = TEMPLATE_FLAG_ALLOW_DUPLICATES
 
+	/// Set this if you want to override basic /space things that fills up each new Z-lvl
+	var/turf/new_z_turf
+	var/area/new_z_area
+
 	/// Null, or a string reason for this type to be skipped in unit testing.
 	var/skip_main_unit_tests
 
@@ -132,6 +136,22 @@
 		if (base_turf_for_zs)
 			GLOB.using_map.base_turf_by_z[num2text(z_index)] = base_turf_for_zs
 		GLOB.using_map.player_levels |= z_index
+
+	var/change_area
+	if(new_z_area)
+		new_z_area = new new_z_area()
+		change_area = TRUE
+
+	var/change_turfs
+	if(new_z_turf)
+		change_turfs = TRUE
+
+	if(change_area || change_turfs)
+		for(var/turf/turf in block(locate(world.maxx,world.maxy,initial_z), locate(1,1,initial_z)))
+			if(isspace(turf.loc) && change_area)
+				ChangeArea(turf, new_z_area)
+			if(isspaceturf(turf) && change_turfs)
+				turf = new new_z_turf(turf)
 
 	//initialize things that are normally initialized after map load
 	init_atoms(atoms_to_initialise)

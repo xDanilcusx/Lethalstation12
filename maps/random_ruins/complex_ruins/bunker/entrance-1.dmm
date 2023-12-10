@@ -1,7 +1,7 @@
 "a" = (/turf/template_noop,/area/template_noop)
-"b" = (/turf/simulated/floor/exoplanet/concrete,/area/map_template/complex/bunker)
-"c" = (/turf/simulated/floor/exoplanet/concrete/reinforced,/area/map_template/complex/bunker)
-"d" = (/turf/simulated/floor/exoplanet/plating,/area/map_template/complex/bunker)
+"b" = (/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
+"c" = (/turf/simulated/floor/exoplanet/concrete/reinforced,/area/template_noop)
+"d" = (/turf/simulated/floor/exoplanet/plating,/area/template_noop)
 
 (1,1,1) = {"
 aabbbaa

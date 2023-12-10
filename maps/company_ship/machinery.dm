@@ -38,4 +38,4 @@
 	..()
 
 /obj/item/light/tube/warm/complex
-	broken_chance = 10
+	broken_chance = 50
