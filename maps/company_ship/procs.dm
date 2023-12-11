@@ -55,6 +55,6 @@
 		user.face_atom(target)
 		. = (!delay || reflexively || (do_after(user, delay, target, do_flags) && can_be_used_by(user, target)))
 		if(cooldown)
-			user.last_special = world.time + cooldown
+			user.last_special = world.time + cooldown * MANEUVER_COOLDOWN_MOD
 		if(stamina_cost)
 			user.adjust_stamina(stamina_cost * MANEUVER_STAMINA_LOSS_MOD)

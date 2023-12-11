@@ -36,7 +36,7 @@
 	evac_controller_type = /datum/evacuation_controller/starship
 
 	use_overmap = 1
-	num_exoplanets = 2
+	num_exoplanets = 1
 
 	away_site_budget = 0
 	min_offmap_players = 0

@@ -1,4 +1,5 @@
-#define MANEUVER_STAMINA_LOSS_MOD -2
+#define MANEUVER_STAMINA_LOSS_MOD -3
+#define MANEUVER_COOLDOWN_MOD 0.6
 #define LEAP_RANGE_ADD 0.5
 
 #define LOOT_ALL           1

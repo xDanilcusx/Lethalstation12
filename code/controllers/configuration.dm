@@ -260,10 +260,10 @@
 	var/static/skill_sprint_cost_range = 0.8
 
 	/// Modifier for minimum rate mobs can regain stamina
-	var/static/minimum_stamina_recovery = 6
+	var/static/minimum_stamina_recovery = 8
 
 	/// Modifier for maximum rate mobs can regain stamina
-	var/static/maximum_stamina_recovery = 18
+	var/static/maximum_stamina_recovery = 24
 
 	/// After this amount alive, mushrooms will not boom boom
 	var/static/maximum_mushrooms = 15

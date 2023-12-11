@@ -30,11 +30,6 @@
 	if(LAZYLEN(decals))
 		AddOverlays(decals)
 
-/turf/simulated/floor/exoplanet/complex/no_loot
-	loot_chance = 0
-	sentry_chance = 0
-	landmine_chance = 0
-
 /turf/simulated/floor/exoplanet/complex/concrete
 	name = "concrete"
 	desc = "Stone-like artificial material."
@@ -51,6 +46,46 @@
 /turf/simulated/floor/exoplanet/complex/concrete/melt()
 	burnt = TRUE
 	update_icon()
+
+/turf/simulated/floor/exoplanet/complex/no_loot
+	loot_chance = 0
+	sentry_chance = 0
+	landmine_chance = 0
+
+/turf/simulated/floor/exoplanet/complex/no_loot/chasm
+	name = "open space"
+	color = COLOR_DARK_GRAY
+
+/turf/simulated/floor/exoplanet/complex/no_loot/chasm/ex_act(severity)
+	return
+
+/turf/simulated/floor/exoplanet/complex/no_loot/chasm/Enter(atom/movable/mover, atom/forget)
+	if(!ishuman(mover) && !isobj(mover))
+		return ..()
+
+	var/datum/thrownthing/flying = mover.throwing
+	if(flying)
+		if(flying.target_turf != src)
+			return ..()
+
+	for(var/obj/scaffolding in src)
+		var/obj_layer = scaffolding.layer
+		if(obj_layer == CATWALK_LAYER || obj_layer == LATTICE_LAYER)
+			return ..()
+
+	addtimer(new Callback(mover, /atom/movable/proc/fake_fall, src), 2)
+	return ..()
+
+/atom/movable/proc/fake_fall(turf/chasm)
+	if(ishuman(src))
+		spawn(8)
+			playsound(chasm, 'sound/effects/bodyfall.ogg', 75)
+			playsound(chasm, get_sfx("fracture"), 25, TRUE)
+			playsound(chasm, get_sfx("fracture"), 50, TRUE)
+			playsound(chasm, get_sfx("fracture"), 75, TRUE)
+
+	visible_message(SPAN_DANGER("\The [src] falls straight into [chasm]!"))
+	qdel(src)
 
 #define CONCRETE_GREY_COLOR "#717171"
 

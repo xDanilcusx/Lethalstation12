@@ -20,5 +20,10 @@
 
 	. += LEAP_RANGE_ADD
 
+/datum/species/human
+	maneuvers = list(
+		/singleton/maneuver/leap
+	)
+
 /singleton/cultural_info/culture/human
 	secondary_langs = list(LANGUAGE_SPACER)

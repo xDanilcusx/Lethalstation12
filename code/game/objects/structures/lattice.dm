@@ -17,7 +17,7 @@
 /obj/structure/lattice/Initialize(mapload, new_material)
 	. = ..()
 	DELETE_IF_DUPLICATE_OF(/obj/structure/lattice)
-	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open)))
+	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open) || istype(src.loc, /turf/simulated/floor/exoplanet/complex/no_loot/chasm)))
 		return INITIALIZE_HINT_QDEL
 	if(!new_material)
 		new_material = init_material
@@ -112,7 +112,7 @@
 		if(locate(/obj/structure/lattice, T) || locate(/obj/structure/catwalk, T))
 			dir_sum += direction
 		else
-			if(!(istype(get_step(src, direction), /turf/space)) && !(istype(get_step(src, direction), /turf/simulated/open)))
+			if(!(istype(get_step(src, direction), /turf/space)) && !(istype(get_step(src, direction), /turf/simulated/open)) && !(istype(get_step(src, direction), /turf/simulated/floor/exoplanet/complex/no_loot/chasm)))
 				dir_sum += direction
 
 	icon_state = "lattice[dir_sum]"

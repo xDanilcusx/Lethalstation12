@@ -6,7 +6,6 @@
 /area/map_template/complex/bunker
 	name = "\improper Abandoned Bunker"
 	icon_state = "blue"
-	base_turf = /turf/simulated/floor/exoplanet/complex/no_loot
 
 /turf/simulated/wall/r_wall/invincible/bunker
 	paint_color = CONCRETE_GREY_COLOR
