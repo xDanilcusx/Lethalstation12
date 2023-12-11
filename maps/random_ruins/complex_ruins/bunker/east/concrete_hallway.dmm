@@ -1,15 +1,15 @@
 "a" = (/turf/simulated/wall/r_wall/invincible/bunker,/area/template_noop)
-"b" = (/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
-"c" = (/obj/machinery/light/complex{icon_state = "tube_map"; dir = 1},/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
-"d" = (/obj/machinery/light/complex,/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
-"e" = (/obj/landmark/map_load_mark/complex/bunker/north,/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
-"f" = (/obj/landmark/map_load_mark/complex/bunker/east,/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
-"g" = (/obj/landmark/map_load_mark/complex/bunker/south,/turf/simulated/floor/exoplanet/concrete,/area/template_noop)
+"b" = (/turf/simulated/floor/exoplanet/complex/concrete,/area/template_noop)
+"c" = (/obj/machinery/light/complex{icon_state = "tube_map"; dir = 1},/turf/simulated/floor/exoplanet/complex/concrete,/area/template_noop)
+"d" = (/obj/machinery/light/complex,/turf/simulated/floor/exoplanet/complex/concrete,/area/template_noop)
+"e" = (/obj/landmark/map_load_mark/complex/bunker/north,/turf/simulated/floor/exoplanet/complex/concrete,/area/template_noop)
+"f" = (/obj/landmark/map_load_mark/complex/bunker/east,/turf/simulated/floor/exoplanet/complex/concrete,/area/template_noop)
+"g" = (/obj/landmark/map_load_mark/complex/bunker/south,/turf/simulated/floor/exoplanet/complex/concrete,/area/template_noop)
 
 (1,1,1) = {"
 aaaaaaeaa
-bbbbbcbba
+bbcbbbbba
 bbbbbbbbf
-bbdbbbbba
+bbbbbdbba
 aaaaaagaa
 "}

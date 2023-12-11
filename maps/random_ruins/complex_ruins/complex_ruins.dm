@@ -62,7 +62,7 @@
 
 /area/map_template/complex
 	area_flags = AREA_FLAG_RAD_SHIELDED | AREA_FLAG_ION_SHIELDED | AREA_FLAG_NO_MODIFY
-	base_turf = /turf/simulated/floor/exoplanet/plating
+	base_turf = /turf/simulated/floor/exoplanet/complex/no_loot
 
 /************************************
 			LANDMARKS
