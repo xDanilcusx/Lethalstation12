@@ -1,3 +1,6 @@
+/obj/item/tank/oxygen_emergency_double
+	slot_flags = SLOT_BELT | SLOT_BACK
+
 /obj/item/clothing/suit/space/void/company
 	name = "old space suit"
 	desc = "An orange spacesuit sporting clean lines and somewhat durable plating. Old, smelly, and slightly suspicious."
@@ -8,7 +11,6 @@
 	)
 	helmet = /obj/item/clothing/head/helmet/space/void/company
 	boots = /obj/item/clothing/shoes/magboots
-	tank = /obj/item/tank/oxygen_emergency_double
 	item_flags = ITEM_FLAG_THICKMATERIAL | ITEM_FLAG_INVALID_FOR_CHAMELEON
 
 /obj/item/clothing/head/helmet/space/void/company
@@ -94,3 +96,6 @@
 /obj/item/device/flashlight/upgraded
 	w_class = ITEM_SIZE_NORMAL
 	power_usage = 80
+
+/obj/structure/railing/mapped
+	init_color = "#c7b446"
