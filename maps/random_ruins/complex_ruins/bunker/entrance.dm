@@ -15,8 +15,8 @@
 	name = "Entrance marks"
 	prefix = "maps/random_ruins/complex_ruins/bunker/"
 	suffixes = list("entrance-2-marks.dmm")
-	door_x = 4
-	door_y = 5
+	entrance_x = 4
+	entrance_y = 5
 
 /obj/landmark/map_load_mark/complex/bunker/mark_for_marks
 	name = "Entrance bunker pieces spawn"

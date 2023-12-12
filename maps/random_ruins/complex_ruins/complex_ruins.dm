@@ -5,9 +5,9 @@
 	prefix = "maps/random_ruins/complex_ruins/"
 	template_flags = TEMPLATE_FLAG_CLEAR_CONTENTS | TEMPLATE_FLAG_NO_RUINS | TEMPLATE_FLAG_NO_RADS
 
-	/// Координаты турфа "двери" в комнату писать сюда
-	var/door_x = 1 // COUNT FROM ONE!!!
-	var/door_y = 1 // COUNT FROM ONE!!!
+	/// Координаты центра входа в комнату писать сюда
+	var/entrance_x = 1 // COUNT FROM ONE!!!
+	var/entrance_y = 1 // COUNT FROM ONE!!!
 
 /datum/map_template/ruin/complex/after_load(z)
 	for(var/obj/landmark/map_load_mark/complex/mark in subtemplates_to_spawn)
@@ -22,8 +22,8 @@
 		var/datum/map_template/ruin/complex/map = pick(map_types)
 		map = new map()
 
-		var/x_pos = mark.x - map.door_x + ceil(map.width/2)
-		var/y_pos = mark.y - map.door_y + ceil(map.height/2)
+		var/x_pos = mark.x - map.entrance_x + ceil(map.width/2)
+		var/y_pos = mark.y - map.entrance_y + ceil(map.height/2)
 
 		var/turf/doorway_loc = locate(x_pos, y_pos, mark.z)
 

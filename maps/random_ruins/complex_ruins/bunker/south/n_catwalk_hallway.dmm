@@ -1,0 +1,21 @@
+"a" = (/turf/simulated/wall/r_wall/invincible/bunker,/area/template_noop)
+"b" = (/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/exoplanet/complex/no_loot/chasm,/area/template_noop)
+"c" = (/obj/structure/catwalk,/turf/simulated/floor/exoplanet/complex/no_loot/chasm,/area/template_noop)
+"d" = (/obj/structure/railing/mapped,/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/exoplanet/complex/no_loot/chasm,/area/template_noop)
+"e" = (/obj/machinery/light/complex{icon_state = "tube_map"; dir = 8},/obj/structure/railing/mapped{dir = 4; icon_state = "railing0-1"},/turf/simulated/floor/exoplanet/complex/no_loot/chasm,/area/template_noop)
+"f" = (/obj/structure/railing/mapped{dir = 1; icon_state = "railing0-1"},/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/exoplanet/complex/no_loot/chasm,/area/template_noop)
+"g" = (/obj/landmark/map_load_mark/complex/bunker/east,/turf/simulated/floor/exoplanet/complex,/area/template_noop)
+"h" = (/obj/landmark/map_load_mark/complex/bunker,/turf/simulated/floor/exoplanet/complex,/area/template_noop)
+"i" = (/obj/structure/railing/mapped{dir = 8; icon_state = "railing0-1"},/turf/simulated/floor/exoplanet/complex/no_loot/chasm,/area/template_noop)
+
+(1,1,1) = {"
+abcda
+aeccg
+abcfa
+abcia
+abcia
+abcda
+aeccg
+abcfa
+aahaa
+"}
