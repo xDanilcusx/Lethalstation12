@@ -89,17 +89,17 @@ GLOBAL_DATUM_INIT(maploader, /dmm_suite, new)
 // cropMap: When true, the map will be cropped to fit the existing world dimensions (Optional).
 // measureOnly: When true, no changes will be made to the world (Optional).
 // no_changeturf: When true, turf/AfterChange won't be called on loaded turfs
-/dmm_suite/proc/load_map(dmm_file, x_offset, y_offset, z_offset, cropMap, measureOnly, no_changeturf, clear_contents, lower_crop_x, lower_crop_y, upper_crop_x, upper_crop_y, initialized_areas_by_type)
+/dmm_suite/proc/load_map(dmm_file, x_offset, y_offset, z_offset, cropMap, measureOnly, no_changeturf, clear_contents, lower_crop_x, lower_crop_y, upper_crop_x, upper_crop_y, initialized_areas_by_type, turn_angle, turf/rotation_center)
 	//How I wish for RAII
 	Master.StartLoadingMap()
 	space_key = null
 	initialized_areas_by_type = initialized_areas_by_type || list()
 	if(!(world.area in initialized_areas_by_type))
 		initialized_areas_by_type[world.area] = locate(world.area)
-	. = load_map_impl(dmm_file, x_offset, y_offset, z_offset, cropMap, measureOnly, no_changeturf, clear_contents, lower_crop_x, upper_crop_x, lower_crop_y, upper_crop_y, initialized_areas_by_type)
+	. = load_map_impl(dmm_file, x_offset, y_offset, z_offset, cropMap, measureOnly, no_changeturf, clear_contents, lower_crop_x, upper_crop_x, lower_crop_y, upper_crop_y, initialized_areas_by_type, turn_angle, rotation_center)
 	Master.StopLoadingMap()
 
-/dmm_suite/proc/load_map_impl(dmm_file, x_offset, y_offset, z_offset, cropMap, measureOnly, no_changeturf, clear_contents, x_lower = -INFINITY, x_upper = INFINITY, y_lower = -INFINITY, y_upper = INFINITY, initialized_areas_by_type)
+/dmm_suite/proc/load_map_impl(dmm_file, x_offset, y_offset, z_offset, cropMap, measureOnly, no_changeturf, clear_contents, x_lower = -INFINITY, x_upper = INFINITY, y_lower = -INFINITY, y_upper = INFINITY, initialized_areas_by_type, turn_angle, turf/rotation_center)
 	var/tfile = dmm_file//the map file we're creating
 	if(isfile(tfile))
 		tfile = file2text(tfile)
@@ -166,6 +166,22 @@ GLOBAL_DATUM_INIT(maploader, /dmm_suite, new)
 					world.maxz = zcrd //create a new z_level if needed
 				if(!no_changeturf)
 					WARNING("Z-level expansion occurred without no_changeturf set, this may cause problems when /turf/post_change is called.")
+
+			if(turn_angle)
+				var/centerx = rotation_center.x
+				var/centery = rotation_center.y
+				var/newx = xcrdStart
+				var/newy = ycrd
+
+				turn_angle = turn_angle<0 ? turn_angle+360 : turn_angle
+				message_admins("turn_angle [turn_angle]")
+				for(turn_angle, turn_angle > 0, turn_angle -= 90)
+					message_admins("newx = [centerx] + ([ycrd] - [centery])")
+					message_admins("newy = [centery] + ([xcrdStart] - [centerx])")
+					newx = centerx + (ycrd - centery)
+					newy = centery - (xcrdStart - centerx)
+					xcrdStart = newx
+					ycrd = newy
 
 			bounds[MAP_MINX] = min(bounds[MAP_MINX], clamp(xcrdStart, x_lower, x_upper))
 			bounds[MAP_MINZ] = min(bounds[MAP_MINZ], zcrd)

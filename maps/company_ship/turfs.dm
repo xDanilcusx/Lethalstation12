@@ -54,6 +54,7 @@
 
 /turf/simulated/floor/exoplanet/complex/no_loot/chasm
 	name = "open space"
+	desc = "It is about 3 levels deep."
 	color = COLOR_DARK_GRAY
 
 /turf/simulated/floor/exoplanet/complex/no_loot/chasm/ex_act(severity)

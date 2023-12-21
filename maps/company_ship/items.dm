@@ -98,4 +98,4 @@
 	power_usage = 80
 
 /obj/structure/railing/mapped
-	init_color = "#c7b446"
+	init_color = "#b8ac40"

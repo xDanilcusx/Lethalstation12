@@ -30,12 +30,14 @@
 	allowed_devices = list(/obj/item/device/flashlight, /obj/item/gun/energy, /obj/item/gun/magnetic/railgun, /obj/item/melee/baton, /obj/item/cell, /obj/item/modular_computer, /obj/item/device/suit_sensor_jammer, /obj/item/stock_parts/computer/battery_module, /obj/item/shield_diffuser, /obj/item/clothing/mask/smokable/ecig, /obj/item/device/radio)
 
 /obj/machinery/light/complex
-	light_type = /obj/item/light/tube/warm/complex
+	light_type = /obj/item/light/tube/complex
 
 /obj/machinery/light/complex/attackby(obj/item/W, mob/user)
 	if (isScrewdriver(W))
 		return
 	..()
 
-/obj/item/light/tube/warm/complex
+/obj/item/light/tube/complex
 	broken_chance = 50
+	b_range = 3
+	random_tone = FALSE

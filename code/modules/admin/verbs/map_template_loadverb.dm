@@ -9,6 +9,9 @@
 	if(!map)
 		return
 
+	var/angle = text2num(alert(usr,"Rotation angle.","Angle","0","90","180"))
+	message_admins("[angle]")
+
 	var/datum/map_template/template = SSmapping.map_templates[map]
 
 	var/turf/T = get_turf(usr)
@@ -23,7 +26,7 @@
 	if(alert(usr,"Confirm location.","Template Confirm","Yes","No") == "Yes")
 		log_and_message_admins("is attempting to place a map template [log_name].")
 		to_chat(usr, "Attempting to place map template [log_name].")
-		if(template.load(T, centered = TRUE))
+		if(template.load(T, centered = TRUE,turn_angle=angle))
 			log_and_message_admins("has placed a map template [log_name].")
 			to_chat(usr, "Successfully placed map template [log_name].")
 		else

@@ -12,7 +12,7 @@
 	var/accessibility_weight = 0
 	var/template_flags = TEMPLATE_FLAG_ALLOW_DUPLICATES
 
-	/// Set this if you want to override basic /space things that fills up each new Z-lvl
+	/// Set this if you want to override basic ../space things that fills up each new Z
 	var/turf/new_z_turf
 	var/area/new_z_area
 
@@ -166,7 +166,7 @@
 
 	return locate(world.maxx/2, world.maxy/2, world.maxz)
 
-/datum/map_template/proc/load(turf/T, centered=FALSE)
+/datum/map_template/proc/load(turf/T, centered=FALSE, turn_angle)
 	if(centered)
 		T = locate(T.x - round(width/2) , T.y - round(height/2) , T.z)
 	if(!T)
@@ -187,7 +187,7 @@
 		var/mappath = mappaths[i]
 		var/datum/map_load_metadata/M
 		if (i==1)
-			M = GLOB.maploader.load_map(file(mappath), T.x, T.y, T.z, cropMap=TRUE, clear_contents=(template_flags & TEMPLATE_FLAG_CLEAR_CONTENTS), initialized_areas_by_type = initialized_areas_by_type)
+			M = GLOB.maploader.load_map(file(mappath), T.x, T.y, T.z, cropMap=TRUE, clear_contents=(template_flags & TEMPLATE_FLAG_CLEAR_CONTENTS), initialized_areas_by_type = initialized_areas_by_type, turn_angle = turn_angle, rotation_center = T)
 			if (M)
 				atoms_to_initialise += M.atoms_to_initialise
 			else
